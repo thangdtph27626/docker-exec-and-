@@ -100,3 +100,47 @@ docker logs --since=5m my-container
 + --timestamps: Hiển thị thời gian của mỗi dòng nhật ký.
 + --details: Hiển thị thêm thông tin chi tiết về mỗi dòng nhật ký.
 
+
+## Sự khác nhau giữa docker exec và docker logs
+
+ <table data-sourcepos="41:1-48:139">
+                <tbody>
+                    <tr data-sourcepos="41:1-41:41">
+                        <th data-sourcepos="41:1-41:11">Tính năng</th>
+                        <th data-sourcepos="41:13-41:25">Docker exec</th>
+                        <th data-sourcepos="41:27-41:39">Docker logs</th>
+                    </tr>
+                    <tr data-sourcepos="43:1-43:90">
+                        <td data-sourcepos="43:1-43:11">Chức năng</td>
+                        <td data-sourcepos="43:13-43:61">Chạy một lệnh hoặc một tập lệnh trong container</td>
+                        <td data-sourcepos="43:63-43:88">Xem nhật ký từ container</td>
+                    </tr>
+                    <tr data-sourcepos="44:1-44:115">
+                        <td data-sourcepos="44:1-44:9">Kết quả</td>
+                        <td data-sourcepos="44:11-44:48">Tạo ra một shell mới trong container</td>
+                        <td data-sourcepos="44:50-44:113">Hiển thị thông tin được ghi vào STDOUT và STDERR của container
+                        </td>
+                    </tr>
+                    <tr data-sourcepos="45:1-45:91">
+                        <td data-sourcepos="45:1-45:9">Yêu cầu</td>
+                        <td data-sourcepos="45:11-45:48">Phải có quyền truy cập vào container</td>
+                        <td data-sourcepos="45:50-45:89">Không cần quyền truy cập vào container</td>
+                    </tr>
+                    <tr data-sourcepos="46:1-46:104">
+                        <td data-sourcepos="46:1-46:11">Thời gian</td>
+                        <td data-sourcepos="46:13-46:60">Tùy thuộc vào lệnh hoặc tập lệnh được thực thi</td>
+                        <td data-sourcepos="46:62-46:102">Tùy thuộc vào lượng nhật ký được tạo ra</td>
+                    </tr>
+                    <tr data-sourcepos="47:1-47:127">
+                        <td data-sourcepos="47:1-47:18">Khả năng mở rộng</td>
+                        <td data-sourcepos="47:20-47:70">Có thể chạy nhiều lệnh hoặc tập lệnh cùng một lúc</td>
+                        <td data-sourcepos="47:72-47:125">Không thể chạy nhiều lệnh hoặc tập lệnh cùng một lúc</td>
+                    </tr>
+                    <tr data-sourcepos="48:1-48:139">
+                        <td data-sourcepos="48:1-48:18">Tính tương thích</td>
+                        <td data-sourcepos="48:20-48:67">Phải tương thích với phiên bản Docker hiện tại</td>
+                        <td data-sourcepos="48:69-48:137">Phải tương thích với phiên bản Docker được sử dụng để tạo
+                            container</td>
+                    </tr>
+                </tbody>
+            </table>
